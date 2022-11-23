@@ -1,0 +1,187 @@
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    text-decoration-style: solid;
+  }
+  
+  .btn-editar {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btn-tecnico {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btn-tb-eliminar {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btn-tb-impresoras {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btn-tb-buscar {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btn-tb-buscarPlaca {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btn-tb-detalles {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btn-tb-tecnico {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btnEliminar {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  .btnCrearRepuesto {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  
+  .btnRepuestos {
+    background-color: #0f658d;
+    border-color: #031b33;
+  }
+  
+  
+  .btn-sidebar {
+    color: rgb(0, 0, 0);
+  }
+  
+  .nav-pills, .nav-pills .show {
+    color: rgb(255, 255, 255);
+    background-color: #ffffff;
+    border-color: #1861ac;
+  }
+  
+  .nav-link{
+    color: rgb(255, 255, 255);
+  }
+  
+  .nav-link-visited{
+    color: rgb(255, 255, 255);
+  }
+  
+  .nav-link-hover{
+    color: rgb(223, 203, 25);
+  }
+  /*
+  .nav-item a{
+    color: rgb(255, 255, 255);
+  }
+  .nav-item a:link{
+    color: rgb(255, 255, 255);
+  }
+  .nav-item a:hover{
+    color: rgb(228, 184, 62);
+  }
+  .nav-item a:visited{
+    color: rgb(255, 255, 255);
+  }*/
+  
+  .butnav a{
+    color: rgb(0, 0, 0);
+  }
+  
+  .butnav link{
+    color: rgb(0, 0, 0)v;
+  }
+  .butnav a:hover{
+    color: rgb(12, 0, 63);
+  }
+  .butnav a:visited{
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Sticky footer styles
+  -------------------------------------------------- */
+  html {
+    font-size: 14px;
+  }
+  
+  .border-top {
+    border-top: 1px solid #e5e5e5;
+  }
+  .border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  }
+  
+  button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+  }
+  
+  /* Sticky footer styles
+  -------------------------------------------------- */
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    /* Margin bottom by footer height 
+    margin-bottom: 60px;*/
+    margin-bottom: 4vh;
+  }
+  
+  
+  .footer { 
+    width: 95%;
+    white-space: nowrap;
+    line-height:26px; /* Vertically center the text there */
+  }
+  
+  
+  .landing{
+    background-image: linear-gradient(90deg, #1a2347, #212d5e );
+    width: 100%;
+  }
+  
+  .barraLateral{
+    background-image: linear-gradient(180deg, #068de7, #036db4);
+  }
+  
+  .tbAC{
+    text-align: center;
+    color: #ffffff;
+    border-color: #000000 ;
+    border-radius: 1px;
+  }
+  
+  .rightalign{
+    position: fixed;
+    padding: 12px;
+    right: 0;  
+  }
+  
+  .leftalign{
+    position: fixed;
+    padding: 12px;
+    left: 0;  
+  }
+  
+  
+  
+  

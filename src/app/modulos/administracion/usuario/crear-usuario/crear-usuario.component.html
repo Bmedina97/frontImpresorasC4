@@ -1,0 +1,155 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-12">
+        </div>
+        <div class="col-md-6 col-12">
+            <h3 class="display-4">Registro Usuario</h3>
+        </div>
+        <div class="col-md-3 col-12">
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-3 col-12">
+        </div>
+        <div class="col-md-6 col-12">
+            <form [formGroup]="formCreateUser">
+                <div class="form-group">
+                    <label for="nombre">Nombres</label>
+                    <input type="text" formControlName="nombre" class="form-control" placeholder="Digite sus nombres">
+                    <span *ngIf="this.formCreateUser.get('nombre')?.errors?.['required']">
+                        (El nombre no puede quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('nombre')?.errors?.['minlength']">
+                        (Debe tener como mínimo 3 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('nombre')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span>       
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" formControlName="apellidos" class="form-control" placeholder="Digite sus apellidos">
+                    <span *ngIf="this.formCreateUser.get('apellidos')?.errors?.['required']">
+                        (Los apellidos no pueden quedar vacíos)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('apellidos')?.errors?.['minlength']">
+                        (Debe tener como mínimo 6 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('apellidos')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span> 
+                </div>
+                <div class="form-group">
+                    <label for="cedula">Número de identificación</label>
+                    <input type="text" formControlName="cedula" class="form-control" placeholder="Digite su número de identificación">
+                    <span *ngIf="this.formCreateUser.get('cedula')?.errors?.['required']">
+                        (la cedula no puede quedar vacía)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('cedula')?.errors?.['minlength']">
+                        (Debe tener como mínimo 8 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('cedula')?.errors?.['maxlength']">
+                        (Debe tener como maximo 13 caracteres)
+                      </span> 
+                </div>
+                
+                <div class="form-group">
+                    <label for="genero">Genero</label>
+                    <br>
+                    <select formControlName="genero">
+                        <option value="" selected="selected">Seleccione...</option>
+                        <option *ngFor="let genero of listadoGenero" value={{genero.value}}>{{genero.text}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Número de telefono</label>
+                    <input type="text" class="form-control" formControlName="telefono" placeholder="Digite su número teléfonico">
+                    <span *ngIf="this.formCreateUser.get('telefono')?.errors?.['required']">
+                        (El telefono  no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('telefono')?.errors?.['minlength']">
+                        (Debe tener como mínimo 7 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('telefono')?.errors?.['maxlength']">
+                        (Debe tener como maximo 13 caracteres)
+                      </span> 
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" class="form-control" formControlName="email" placeholder="Digite su correo electrónico">
+                    <span *ngIf="this.formCreateUser.get('email')?.errors?.['required']">
+                        (El email no puede quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('email')?.errors?.['minlength']">
+                        (Debe tener como mínimo 8 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('email')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('email')?.errors?.['email']">
+                        (Debe tener una email valido)
+                      </span>
+                </div>
+                <div class="form-group">
+                    <label for="Nivel de estudios">Nivel de estudios</label>
+                    <select formControlName="estudios" class="form-control">
+                        <option value="" selected="selected">Seleccione...</option>
+                          <option value="0">Bachiller</option>
+                          <option value="1">Técnico</option>
+                          <option value="2">Técnologo</option>
+                          <option value="3">Iniversitario</option>                     
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="NombreUsuario">Nombre de usuario</label>
+                    <input type="text" class="form-control" formControlName="nombreUsuario" placeholder="Digite el nombre de usuario">
+                    <span *ngIf="this.formCreateUser.get('nombreUsuario')?.errors?.['required']">
+                        ( Nombre de usuario no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('nombreUsuario')?.errors?.['minlength']">
+                        (Debe tener como mínimo 6 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('nombreUsuario')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span> 
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" placeholder="Digite la contraseña">
+                    <span *ngIf="this.formCreateUser.get('password')?.errors?.['required']">
+                        (Password  no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('password')?.errors?.['minlength']">
+                        (Debe tener como mínimo 6 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreateUser.get('password')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span> 
+                </div>
+                <div class="form-group">
+                    <label for="Rol">Rol</label>
+                    <select formControlName="rol" class="form-control">
+                        <option value="" selected="selected">Seleccione...</option>
+                        <option value="6379211c1055d97b3e072d24">Auxiliar</option>
+                        <option value="637869e36533d9dad99cb6f1">Técnico</option>
+                        <option value="637bc662c89f9040bc8879dd">Operario</option>
+                        <option value="637bc61ac89f9040bc8879dc">Jefe</option>
+                        <option value="637bc67bc89f9040bc8879de">Socio</option>
+                    </select>
+
+                </div>
+                <br>
+                <button  type="button" class="btn btn-primary" (click)="registrar()">Registrar</button>
+                <button type="reset" class="btn btn-default">Limpiar</button>
+            </form>
+  
+        </div>
+        <div class="col-md-3 col-12">
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+

@@ -1,0 +1,54 @@
+<br>
+<br>
+<br> 
+<br>
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-md-2 col-12">
+      </div>
+      <div class="col-md-8 col-12">
+        <fieldset>
+          <legend>Ingreso al sistema</legend> 
+          <br>
+          <form [formGroup]="formulario">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Correo</label>
+              <input type="email" formControlName="email" class="form-control" placeholder="Digite su correo electrónico">
+              <span *ngIf="this.formulario.get('email')?.errors?.['required']">
+                (El email no puede quedar vacío)
+              </span>
+              <span *ngIf="this.formulario.get('email')?.errors?.['minlength']">
+                (Debe tener como mínimo 8 caracteres)
+              </span>
+              <span *ngIf="this.formulario.get('email')?.errors?.['maxlength']">
+                (Debe tener como maximo 100 caracteres)
+              </span>
+              <span *ngIf="this.formulario.get('email')?.errors?.['email']">
+                (Debe tener una email valido)
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" formControlName="password" class="form-control" placeholder="Digite su password">
+              <span *ngIf="this.formulario.get('password')?.errors?.['required']">
+                (El password no puede quedar vacío)
+              </span>
+              <span *ngIf="this.formulario.get('password')?.errors?.['minlength']">
+                (Debe tener como mínimo 8 caracteres)
+              </span>
+              <span *ngIf="this.formulario.get('password')?.errors?.['maxlength']">
+                (Debe tener como maximo 50 caracteres)
+              </span>                  
+            </div>
+            <br>
+            <button [disabled]="!formulario.valid" type="button" class="btn btn-primary" (click)="login()" >Login</button>
+            <br>
+          </form>
+        </fieldset>
+        <br>
+      </div>
+      <div class="col-md-2 col-12">
+      </div>
+    </div>
+</div>

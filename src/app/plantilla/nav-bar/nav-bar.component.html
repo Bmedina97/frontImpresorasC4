@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+    <a class="navbar-brand" routerLink="index">Impresoras 3D</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" routerLink="/plantilla/index"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <ul *ngIf="sesionIniciada" class="navbar-nav">
+          <li class="nav-item active" *ngFor="let menu of listadoMenus">
+            <a class="nav-link" routerLink="{{ menu.path }}">{{ menu.nombre }}</a>
+          </li>
+        </ul>
+
+          <li *ngIf="!sesionIniciada" class="nav-item active">
+            <a class="nav-link" routerLink="/seguridad/acceso">Iniciar Sesión</a>
+          </li>
+      </ul>
+
+   </div>
+</nav>
+

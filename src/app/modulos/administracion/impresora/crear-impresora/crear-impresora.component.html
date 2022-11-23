@@ -1,0 +1,174 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-12">
+        </div>
+        <div class="col-md-6 col-12">
+            <h3 class="display-4">{{titulo}}</h3>
+        </div>
+        <div class="col-md-3 col-12">
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-3 col-12">
+        </div>
+        <div class="col-md-6 col-12">
+            <form [formGroup]="formCreatePrinter">
+                <div class="form-group">
+                    <label for="placa">Placa Impresora</label>
+                    <input type="text" formControlName="placa" class="form-control" placeholder="Digite la placa de la impresora">
+                    <span *ngIf="this.formCreatePrinter.get('placa')?.errors?.['required']">
+                        (placa no puede quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('placa')?.errors?.['minlength']">
+                        (Debe tener como mínimo 3 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('placa')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span>       
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Modelos</label>
+                    <input type="text" formControlName="modelo" class="form-control" placeholder="Digite el modelo">
+                    <span *ngIf="this.formCreatePrinter.get('modelo')?.errors?.['required']">
+                        (Los apellidos no pueden quedar vacíos)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('modelo')?.errors?.['minlength']">
+                        (Debe tener como mínimo 6 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('modelo')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span> 
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca impresora</label>
+                    <input type="text" formControlName="marca" class="form-control" placeholder="Digite la marca">
+                    <span *ngIf="this.formCreatePrinter.get('marca')?.errors?.['required']">
+                        (la marca no puede quedar vacía)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('marca')?.errors?.['minlength']">
+                        (Debe tener como mínimo 8 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('marca')?.errors?.['maxlength']">
+                        (Debe tener como maximo 13 caracteres)
+                      </span> 
+                </div>
+                <div class="form-group">
+                    <label for="tipoImpresora">tipo Impresora</label>
+                    <select formControlName="tipoImpresora" class="form-control">
+                        <option value="" selected="selected">Seleccione...</option>
+                          <option value="0">Cartesiana</option>
+                          <option value="1">Polar</option>
+                          <option value="2">Delta</option>                                           
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="velocidadImpresion">Velocidad impresion ms</label>
+                    <input type="text" class="form-control" formControlName="velocidadImpresion" placeholder="Digite velocidad Impresion">
+                    <span *ngIf="this.formCreatePrinter.get('velocidadImpresion')?.errors?.['required']">
+                        (la velocidadImpresion  no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('velocidadImpresion')?.errors?.['minlength']">
+                        (Debe tener como mínimo 7 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('velocidadImpresion')?.errors?.['maxlength']">
+                        (Debe tener como maximo 13 caracteres)
+                      </span> 
+                </div>
+                <div class="form-group">
+                    <label for="volumenAlto">Volumen de impresion: Alto</label>
+                    <input type="email" class="form-control" formControlName="volumenAlto" placeholder="Volumen de impresion: Alto">
+                    <span *ngIf="this.formCreatePrinter.get('velocidadImpresion')?.errors?.['required']">
+                        (  no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('velocidadImpresion')?.errors?.['minlength']">
+                        (Debe tener como mínimo 7 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('velocidadImpresion')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span>
+
+                </div>
+                <div class="form-group">
+                    <label for="volumenLargo">Volumen de impresion: largo</label>
+                    <input type="email" class="form-control" formControlName="volumenLargo" placeholder="Volumen de impresion: largo">
+                    <span *ngIf="this.formCreatePrinter.get('volumenLargo')?.errors?.['required']">
+                        ( no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('volumenLargo')?.errors?.['minlength']">
+                        (Debe tener como mínimo 7 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('volumenLargo')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span>
+        
+                </div>
+                <div class="form-group">
+                    <label for="volumenProfundo">Volumen de impresion: profundo</label>
+                    <input type="email" class="form-control" formControlName="volumenProfundo" placeholder="Volumen de impresion: Profundo">
+                    <span *ngIf="this.formCreatePrinter.get('volumenProfundo')?.errors?.['required']">
+                        ( no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('volumenProfundo')?.errors?.['minlength']">
+                        (Debe tener como mínimo 7 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('volumenProfundo')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span>
+      
+                </div>
+                <div class="form-group">
+                    <label for="caracterizticas">Caracterizticas</label>
+                    <input type="email" class="form-control" formControlName="caracterizticas" placeholder="Caracterizticas">
+                    <span *ngIf="this.formCreatePrinter.get('caracterizticas')?.errors?.['required']">
+                        ( no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('caracterizticas')?.errors?.['minlength']">
+                        (Debe tener como mínimo 7 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('caracterizticas')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span>
+                    </div>
+                <div class="form-group">
+                    <label for="seguroRobo">Seguro de Robo</label>
+                    <input type="date" class="form-control" formControlName="seguroRobo" placeholder="Digite el seguro de Robo">
+                    <span *ngIf="this.formCreatePrinter.get('seguroRobo')?.errors?.['required']">
+                        ( Nombre de usuario no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('seguroRobo')?.errors?.['minlength']">
+                        (Debe tener como mínimo 6 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('seguroRobo')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span> 
+                </div>
+                <div class="form-group">
+                    <label for="seguroContractual">Seguro contactual</label>
+                    <input type="date" class="form-control" formControlName="seguroContractual" placeholder="Digite el seguro contactual">
+                    <span *ngIf="this.formCreatePrinter.get('seguroContractual')?.errors?.['required']">
+                        ( Nombre de usuario no pueden quedar vacío)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('seguroContractual')?.errors?.['minlength']">
+                        (Debe tener como mínimo 6 caracteres)
+                      </span>
+                      <span *ngIf="this.formCreatePrinter.get('seguroContractual')?.errors?.['maxlength']">
+                        (Debe tener como maximo 100 caracteres)
+                      </span> 
+                </div>
+                <br>
+                <button  type="button" class="btn btn-primary" (click)="registrar()">Registrar</button>
+                <button type="reset" class="btn btn-default">Limpiar</button>
+            </form>
+  
+        </div>
+        <div class="col-md-3 col-12">
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
